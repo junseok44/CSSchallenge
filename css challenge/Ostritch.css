@@ -1,0 +1,44 @@
+body {
+  text-align: center;
+}
+
+#container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+#four-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#white {
+  background-color: #e6e3e3;
+}
+
+#green {
+  background-color: #72ba79;
+}
+
+#red {
+  background-color: #f26850;
+}
+
+#pink {
+  background-color: #ff789a;
+}
+
+#purple {
+  background-color: #e060cf;
+}
+
+#yellow {
+  background-color: #f7dd4a;
+}
+
+#tomato {
+  background-color: #f07e59;
+}

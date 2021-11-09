@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 100vh;
+      }
+      .container {
+        background-color: white;
+        width: 70%;
+        height: 85vh;
+        margin: 10vh auto;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 20px repeat(3, 1fr);
+      }
+      .header {
+        padding: 2px 0px;
+        background-color: grey;
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: space-between;
+      }
+      .bd-solid {
+        border: 1px solid black;
+      }
+      .button1 {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+      }
+      .circle {
+        margin: 0;
+        margin-top: 2px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .circle:not(:last-child) {
+        margin-right: 2px;
+      }
+      .window {
+        width: 50%;
+        border: 1px solid black;
+      }
+      .hidden {
+        width: 15%;
+      }
+
+      .changes {
+        background-color: black;
+        color: white;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        padding: 0;
+      }
+      .changes ul {
+        list-style-type: none;
+        margin: 0;
+        margin-top: 5px;
+        padding: 0;
+        padding-left: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #list1 {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+      }
+      #list2 {
+        grid-column: 4 / 5;
+        grid-row: 2 / 4;
+      }
+      .list {
+        padding-left: 10px;
+      }
+      .list h4 {
+        margin: 10px 0px;
+        text-transform: uppercase;
+        font-size: 0.8em;
+      }
+      .list div {
+        margin-left: 10px;
+        text-transform: uppercase;
+        font-size: 1em;
+        font-weight: bold;
+      }
+      .bc-purple {
+        background-color: purple;
+      }
+      .bc-red {
+        background-color: red;
+        grid-row: 3 / 5;
+        padding: 5px 0px 0px 5px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.2em;
+      }
+      .bc-yellow {
+        grid-column: 2 / 3;
+        grid-row: 4/ 5;
+        background-color: #ffae17;
+        padding: 5px 0px 0px 5px;
+        font-size: 1.3rem;
+        font-weight: 600;
+        line-height: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container bc-gray">
+      <div class="header">
+        <div class="button1">
+          <div class="circle bd-solid"></div>
+          <div class="circle bd-solid"></div>
+          <div class="circle bd-solid"></div>
+        </div>
+        <div class="window bd-solid"></div>
+        <div class="hidden"></div>
+      </div>
+      <div class="changes bc-black fc-white">
+        <ul>
+          <li>CHANGES</li>
+          <li>CHANGES</li>
+          <li>CHANGES</li>
+          <li>CHANGES</li>
+          <li>JULY 4-5</li>
+        </ul>
+      </div>
+      <div class="bc-purple"></div>
+      <div class="list" id="list1">
+        <h4>speakers</h4>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div style="background-color: purple">hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+      </div>
+      <div class="list" id="list2">
+        <h4>speakers</h4>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+        <div>hello</div>
+      </div>
+      <div class="bc-red">
+        <div>ABOUT</div>
+        <div>ABOUT</div>
+        <div>ABOUT</div>
+        <div>ABOUT</div>
+        <div>ABOUT</div>
+      </div>
+      <div class="bc-yellow">
+        <div>TICEKTS</div>
+      </div>
+    </div>
+  </body>
+</html>

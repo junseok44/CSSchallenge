@@ -22,12 +22,7 @@
         display: grid;
         grid-template-columns: 65% 4% 31%;
       }
-      .container-left {
-        background-color: #ff7400;
-        padding: 5px;
-        padding-right: 10px;
-        padding-top: 0;
-      }
+
       .container-center {
         display: grid;
         grid-template-rows: 50% 50%;
@@ -90,10 +85,156 @@
       .grid-right-content > * {
         margin: 0;
       }
+
+      .container-left {
+        background-color: #ff7400;
+        padding: 5px;
+        padding-right: 10px;
+        padding-top: 0px;
+      }
+      .grid-left {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 3% repeat(6, 1fr);
+      }
+      .grid-left-row {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
+        border-left: 2px solid #ff0400;
+      }
+      .grid-left-row > div {
+        border-bottom: 2px solid #ff0400;
+        border-right: 2px solid #ff0400;
+        color: #ff0400;
+      }
+      .grid-left-row > div > div:nth-child(1) {
+        border-bottom: 2px solid #ff0400;
+      }
+      .grid-left-row > div > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ff0400;
+      }
+      .grid-left-row-right {
+        display: grid;
+        grid-template-rows: 50% 50%;
+      }
+      .grid-left-row-left {
+        writing-mode: vertical-rl;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+      }
+      .grid-left-row-center {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        font-size: 4rem;
+        font-weight: 500;
+      }
+      .button {
+        width: 70%;
+        text-align: center;
+        background-color: #ff0400;
+        border-radius: 10px;
+        color: #ff7400;
+      }
+      .grid-left-row:nth-child(2) {
+        border-bottom: 2px solid white;
+      }
+      #white {
+        border-left: 2px solid white;
+      }
+      #white > div {
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        color: white;
+      }
+      #white > div > div:nth-child(1) {
+        border-bottom: 2px solid white;
+      }
+      #white > div > div:nth-child(2) > div {
+        background-color: white;
+        color: #ff0400;
+      }
+
+      #white > div > div {
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <div class="container-left"></div>
+    <div class="container-left">
+      <div class="grid-left">
+        <div class="grid-left-row header">
+          <div class="grid-left-row-left"></div>
+          <div class="grid-left-row-center"></div>
+          <div class="grid-left-row-right"></div>
+        </div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-left-row" id="white">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="container-center">
       <div class="bc-pink">Special-Offers, INC.</div>
       <div class="bc-blue">2014 -> FOREVER</div>

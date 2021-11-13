@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        display: grid;
+        grid-template-columns: 65% 4% 31%;
+      }
+      .container-left {
+        background-color: #ff7400;
+        padding: 5px;
+        padding-right: 10px;
+        padding-top: 0;
+      }
+      .container-center {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        position: relative;
+      }
+      .container-center > div:nth-child(1) {
+        writing-mode: vertical-rl;
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+      .container-center > div:nth-child(2) {
+        writing-mode: vertical-rl;
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        transform: rotate(180deg);
+      }
+      .center-icon {
+        position: absolute;
+        top: 47%;
+        left: 7%;
+        font-size: 48px;
+        color: white;
+      }
+
+      .bc-pink {
+        background-color: #ff00ff;
+      }
+      .bc-blue {
+        background-color: #1900ff;
+      }
+
+      .grid-left {
+        background-color: #ff0400;
+        padding: 4px;
+        padding-top: 0px;
+        padding-right: 4px;
+        display: grid;
+        grid-template-rows: 5% repeat(6, 1fr);
+        height: 99%;
+        gap: 4px;
+      }
+      .grid-row {
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 5% 65% 30%;
+      }
+      .grid-row-content {
+        background-color: #ff7400;
+      }
+      .grid-row.bd-white > div {
+        box-sizing: border-box;
+      }
+      .grid-row-content.left {
+        writing-mode: vertical-rl;
+        padding: 8px 8px;
+      }
+      .center {
+        padding-left: 3%;
+        display: flex;
+        align-items: center;
+        font-size: 5rem;
+        font-weight: 600;
+      }
+      .right {
+        display: grid;
+        grid-template-rows: 50% 50%;
+      }
+      .right > div {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+      }
+      .right-child-button {
+        width: 80%;
+        border-radius: 20px;
+        text-align: center;
+        background-color: #ff0040;
+      }
+      .container-right {
+        background-color: #ff0400;
+        display: flex;
+        justify-content: center;
+      }
+      .grid-right {
+        width: 95%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 8% repeat(6, 1fr);
+        column-gap: 5px;
+      }
+      .grid-right-content-header {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: 55% 25% 20%;
+        font-size: 1.2rem;
+        padding: 5px;
+      }
+      .grid-right-content {
+        border-top: 2px solid black;
+      }
+      .grid-right-content > * {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-left">
+      <div class="grid-left">
+        <div class="grid-row">
+          <div class="grid-row-content left"></div>
+          <div class="grid-row-content center"></div>
+          <div class="grid-row-content right"></div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-row-content left">E-commerce</div>
+          <div class="grid-row-content center">UNIF</div>
+          <div class="grid-row-content right">
+            <div class="grid-row-content right-child">Design</div>
+            <div class="grid-row-content right-child">
+              <div class="grid-row-content right-child-button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-row bd-white">
+          <div class="grid-row-content left">E-commerce</div>
+          <div class="grid-row-content center">UNIF</div>
+          <div class="grid-row-content right">
+            <div class="grid-row-content right-child">Design</div>
+            <div class="grid-row-content right-child">
+              <div class="grid-row-content right-child-button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-row-content left">E-commerce</div>
+          <div class="grid-row-content center">UNIF</div>
+          <div class="grid-row-content right">
+            <div class="grid-row-content right-child">Design</div>
+            <div class="grid-row-content right-child">
+              <div class="grid-row-content right-child-button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-row-content left">E-commerce</div>
+          <div class="grid-row-content center">UNIF</div>
+          <div class="grid-row-content right">
+            <div class="grid-row-content right-child">Design</div>
+            <div class="grid-row-content right-child">
+              <div class="grid-row-content right-child-button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-row-content left">E-commerce</div>
+          <div class="grid-row-content center">UNIF</div>
+          <div class="grid-row-content right">
+            <div class="grid-row-content right-child">Design</div>
+            <div class="grid-row-content right-child">
+              <div class="grid-row-content right-child-button">Click</div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-row">
+          <div class="grid-row-content left">E-commerce</div>
+          <div class="grid-row-content center">UNIF</div>
+          <div class="grid-row-content right">
+            <div class="grid-row-content right-child">Design</div>
+            <div class="grid-row-content right-child">
+              <div class="grid-row-content right-child-button">Click</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-center">
+      <div class="bc-pink">Special-Offers, INC.</div>
+      <div class="bc-blue">2014 -> FOREVER</div>
+      <i class="fas fa-fan center-icon"></i>
+    </div>
+    <div class="container-right">
+      <div class="grid-right">
+        <div class="grid-right-content-header">
+          <div class="header-content">
+            <i class="far fa-circle"></i>information
+          </div>
+          <div class="header-content"><i class="far fa-circle"></i>Team</div>
+          <div class="header-content"><i class="fas fa-circle"></i>Press</div>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+        <div class="grid-right-content">
+          <h2>Art news</h2>
+          <h5>nomad corders css challenge now left 2days to finish</h5>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

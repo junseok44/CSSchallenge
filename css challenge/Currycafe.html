@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
-      href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
     />
 
     <title>Document</title>
@@ -57,6 +58,7 @@
         grid-row: 5 / 6;
         display: flex;
         flex-direction: column;
+        align-items: center;
       }
 
       .bc-white {
@@ -111,12 +113,16 @@
         position: absolute;
         bottom: 10px;
         right: 10px;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10%;
         background-color: orange;
+        text-align: center;
       }
       .nav i {
         color: white;
+        width: 100%;
+        margin-top: 30%;
       }
       .vc {
         writing-mode: vertical-rl;
@@ -124,7 +130,18 @@
       }
       .vc-on {
         writing-mode: vertical-rl;
-        text-orientation: mixed;
+        text-orientation: unset;
+      }
+      .left-bottom > div {
+        width: 100%;
+        height: 40%;
+      }
+      .left-top,
+      .left-middle,
+      .left-bottom,
+      .right-top,
+      .right-bottom {
+        text-align: center;
       }
     </style>
   </head>
@@ -142,7 +159,10 @@
         <div class="image"></div>
         <div class="image"></div>
         <div class="centerfonts fc-white">
-          <div>(something image)</div>
+          <i class="fas fa-hamburger"></i>
+          <i class="fas fa-drumstick-bite"></i>
+          <i class="fas fa-hamburger"></i>
+
           <div>CURRY</div>
           <div>CAFE</div>
         </div>
@@ -152,16 +172,20 @@
       <div class="left-middle bc-white fc-orange vc-on">
         i thought it was a curry cafe but it was a chinese restaurant have you
       </div>
-      <div class="left-bottom bc-white fc-orange vc">
-        <i class="fas fa-cheese"></i>
-        <i class="fas fa-burrito"></i>
+      <div class="left-bottom bc-white fc-orange">
+        <div>
+          <i class="fas fa-cheese"></i>
+        </div>
+        <div>
+          <i class="fas fa-burrito"></i>
+        </div>
       </div>
       <div class="footer bc-white fc-orange">
         i thought it was a curry cafe but it was a chinese restaurant have you
         ever tried jjamppong? and this is delicious stuff and nothing to say
         about...
       </div>
-      <div class="nav bc-yellow"><i class="fas fa-drumstick-bite"></i></div>
+      <div class="nav bc-yellow"><i class="fas fa-address-card"></i></div>
     </div>
   </body>
 </html>

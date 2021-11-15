@@ -22,12 +22,7 @@
         display: grid;
         grid-template-columns: 65% 4% 31%;
       }
-      .container-left {
-        background-color: #ff7400;
-        padding: 5px;
-        padding-right: 10px;
-        padding-top: 0;
-      }
+
       .container-center {
         display: grid;
         grid-template-rows: 50% 50%;
@@ -64,6 +59,7 @@
       .bc-blue {
         background-color: #1900ff;
       }
+<<<<<<< HEAD
 
       .grid-left {
         background-color: #ff0400;
@@ -114,6 +110,8 @@
         text-align: center;
         background-color: #ff0040;
       }
+=======
+>>>>>>> container-left
       .container-right {
         background-color: #ff0400;
         display: flex;
@@ -140,6 +138,7 @@
       .grid-right-content > * {
         margin: 0;
       }
+<<<<<<< HEAD
       .bd-white {
         border-top: 5px solid white;
         border-left: 5px solid white;
@@ -153,6 +152,84 @@
         border-bottom: 5px solid white;
       }
       .bd-white div {
+=======
+
+      .container-left {
+        background-color: #ff7400;
+        padding: 5px;
+        padding-right: 10px;
+        padding-top: 0px;
+      }
+      .grid-left {
+        height: 100%;
+        display: grid;
+        grid-template-rows: 3% repeat(6, 1fr);
+      }
+      .grid-left-row {
+        display: grid;
+        grid-template-columns: 5% 65% 30%;
+        border-left: 2px solid #ff0400;
+      }
+      .grid-left-row > div {
+        border-bottom: 2px solid #ff0400;
+        border-right: 2px solid #ff0400;
+        color: #ff0400;
+      }
+      .grid-left-row > div > div:nth-child(1) {
+        border-bottom: 2px solid #ff0400;
+      }
+      .grid-left-row > div > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ff0400;
+      }
+      .grid-left-row-right {
+        display: grid;
+        grid-template-rows: 50% 50%;
+      }
+      .grid-left-row-left {
+        writing-mode: vertical-rl;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+      }
+      .grid-left-row-center {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        font-size: 4rem;
+        font-weight: 500;
+      }
+      .button {
+        width: 70%;
+        text-align: center;
+        background-color: #ff0400;
+        border-radius: 10px;
+        color: #ff7400;
+      }
+      .grid-left-row:nth-child(2) {
+        border-bottom: 2px solid white;
+      }
+      #white {
+        border-left: 2px solid white;
+      }
+      #white > div {
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+        color: white;
+      }
+      #white > div > div:nth-child(1) {
+        border-bottom: 2px solid white;
+      }
+      #white > div > div:nth-child(2) > div {
+        background-color: white;
+        color: #ff0400;
+      }
+
+      #white > div > div {
+>>>>>>> container-left
         color: white;
       }
     </style>
@@ -160,68 +237,68 @@
   <body>
     <div class="container-left">
       <div class="grid-left">
-        <div class="grid-row">
-          <div class="grid-row-content left"></div>
-          <div class="grid-row-content center"></div>
-          <div class="grid-row-content right"></div>
+        <div class="grid-left-row header">
+          <div class="grid-left-row-left"></div>
+          <div class="grid-left-row-center"></div>
+          <div class="grid-left-row-right"></div>
         </div>
-        <div class="grid-row">
-          <div class="grid-row-content left">E-commerce</div>
-          <div class="grid-row-content center">UNIF</div>
-          <div class="grid-row-content right">
-            <div class="grid-row-content right-child">Design</div>
-            <div class="grid-row-content right-child">
-              <div class="grid-row-content right-child-button">Click</div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
             </div>
           </div>
         </div>
-        <div class="grid-row bd-white">
-          <div class="grid-row-content left">E-commerce</div>
-          <div class="grid-row-content center">UNIF</div>
-          <div class="grid-row-content right">
-            <div class="grid-row-content right-child">Design</div>
-            <div class="grid-row-content right-child">
-              <div class="grid-row-content right-child-button">Click</div>
+        <div class="grid-left-row" id="white">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
             </div>
           </div>
         </div>
-        <div class="grid-row">
-          <div class="grid-row-content left">E-commerce</div>
-          <div class="grid-row-content center">UNIF</div>
-          <div class="grid-row-content right">
-            <div class="grid-row-content right-child">Design</div>
-            <div class="grid-row-content right-child">
-              <div class="grid-row-content right-child-button">Click</div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
             </div>
           </div>
         </div>
-        <div class="grid-row">
-          <div class="grid-row-content left">E-commerce</div>
-          <div class="grid-row-content center">UNIF</div>
-          <div class="grid-row-content right">
-            <div class="grid-row-content right-child">Design</div>
-            <div class="grid-row-content right-child">
-              <div class="grid-row-content right-child-button">Click</div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
             </div>
           </div>
         </div>
-        <div class="grid-row">
-          <div class="grid-row-content left">E-commerce</div>
-          <div class="grid-row-content center">UNIF</div>
-          <div class="grid-row-content right">
-            <div class="grid-row-content right-child">Design</div>
-            <div class="grid-row-content right-child">
-              <div class="grid-row-content right-child-button">Click</div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
             </div>
           </div>
         </div>
-        <div class="grid-row">
-          <div class="grid-row-content left">E-commerce</div>
-          <div class="grid-row-content center">UNIF</div>
-          <div class="grid-row-content right">
-            <div class="grid-row-content right-child">Design</div>
-            <div class="grid-row-content right-child">
-              <div class="grid-row-content right-child-button">Click</div>
+        <div class="grid-left-row">
+          <div class="grid-left-row-left">E-commerce</div>
+          <div class="grid-left-row-center">UNIF</div>
+          <div class="grid-left-row-right">
+            <div class="grid-left-row-right-top">Design & Development</div>
+            <div class="grid-left-row-right-bottom">
+              <div class="button">Click</div>
             </div>
           </div>
         </div>

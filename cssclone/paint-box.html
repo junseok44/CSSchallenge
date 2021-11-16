@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+      body {
+        width: 100%;
+        height: 700vh;
+        font-family: "Roboto", sans-serif;
+        position: relative;
+        padding: 0;
+        margin: 0;
+      }
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header__flexbox {
+        display: flex;
+      }
+      .header__child {
+        margin-left: 15px;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+      .header__icon > img {
+        max-width: 50px;
+      }
+      div[class$="container"] {
+        padding: 20px 60px;
+        height: 90vh;
+        margin-top: 200px;
+      }
+      .section__content {
+        height: 100%;
+        display: flex;
+      }
+      .section__content > div {
+        width: 50%;
+        height: 100%;
+      }
+      .content__picture {
+        background-image: url("https://ww.namu.la/s/f23e706475e669c20fb9c8eedfbdb0d0ac0ee74ab19e38b8809d985929f0b692a08bbd1f19c73877fda6ee2fd03949ef27819058e7f355a90367ee3718eaa2b95cea08fecd9b55662561f4c2c7347450659e1647db4314efb15e19efb6fb7943");
+        background-size: cover;
+      }
+      .content__text {
+        background-color: #fbf7f6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .content__text > div {
+        margin-top: 30px;
+      }
+      .text__top {
+        font-size: 34px;
+        line-height: 38px;
+        width: 80%;
+      }
+      div[class$="button"] {
+        width: 50%;
+        text-align: center;
+        border: 1px solid black;
+        padding: 15px 10px;
+      }
+      div[class$="button"]:hover {
+        background-color: #414141;
+        border: none;
+        color: white;
+        transition: background-color 1s ease-in-out;
+      }
+      .item__flexbox {
+        display: flex;
+        flex-direction: column;
+      }
+      div[class^="item__content"] {
+        width: 100%;
+        text-align: center;
+      }
+      div[class$="title"] {
+        font-size: 36px;
+      }
+      .item__content__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 80vh;
+      }
+      .item__child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .item__child > img {
+        max-width: 100%;
+      }
+      .item__child > div {
+        margin-bottom: 15px;
+      }
+      .album__container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      .album {
+        width: 100%;
+      }
+      .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 40px 40px;
+        height: 200px;
+        box-sizing: border-box;
+        background-color: #fbf7f6;
+      }
+      .footer__col {
+        display: inline-block;
+        width: 33%;
+        height: 100%;
+      }
+      .footer__col:not(:last-child) {
+        border-right: 1px solid black;
+      }
+      .footer__col__title {
+        text-align: center;
+      }
+      .footer__list {
+        list-style-type: none;
+        padding: 0;
+      }
+      .footer__list > li {
+        display: list-item;
+        text-align: center;
+        font-size: 10px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header__flexbox">
+        <div class="header__child">NAIL STUDIO</div>
+        <div class="header__child">SHOP PRODUCT</div>
+      </div>
+      <div class="header__icon">
+        <img
+          src="data:image/png;base64,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"
+          alt="instagram"
+        />
+      </div>
+      <div class="header__flexbox">
+        <div class="header__child">NAIL STUDIO</div>
+        <div class="header__child">SHOP PRODUCT</div>
+      </div>
+    </div>
+    <div class="picture__container">
+      <div class="section__content">
+        <div class="content__picture"></div>
+        <div class="content__text">
+          <div class="text__top">
+            Meet Like French, our deep, chic rouge polish that will never go out
+            of style. Nail your look at home with our most in-demand shade
+            during the holiday season at our NYC studio.
+          </div>
+          <div class="text__button">DISCOVER NOW</div>
+        </div>
+      </div>
+    </div>
+    <div class="picture__container">
+      <div class="section__content">
+        <div class="content__picture"></div>
+        <div class="content__text">
+          <div class="text__top">
+            Meet Like French, our deep, chic rouge polish that will never go out
+            of style. Nail your look at home with our most in-demand shade
+            during the holiday season at our NYC studio.
+          </div>
+          <div class="text__button">DISCOVER NOW</div>
+        </div>
+      </div>
+    </div>
+    <div class="item__container">
+      <div class="item__flexbox">
+        <div class="item__content__sub">THE SHOP</div>
+        <div class="item__content__title">Our Newest Polish Colors</div>
+        <div class="item__content__wrapper">
+          <div class="item__child">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0086/4865/4895/products/LikeFrenchPDPCarousel2_640x800_crop_center.jpg?v=1634317662"
+            />
+            <div class="item__child__category">dfdfd</div>
+            <div class="item__child__title">HELLO</div>
+            <div class="item__child__button">ADD TO CARD</div>
+          </div>
+          <div class="item__child">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0086/4865/4895/products/LikeFrenchPDPCarousel2_640x800_crop_center.jpg?v=1634317662"
+            />
+            <div class="item__child__category">dfdfdf</div>
+            <div class="item__child__title">WELCOME</div>
+            <div class="item__child__button">ADD TO CARD</div>
+          </div>
+          <div class="item__child">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0086/4865/4895/products/LikeFrenchPDPCarousel2_640x800_crop_center.jpg?v=1634317662"
+            />
+            <div class="item__child__category">dfdfdf</div>
+            <div class="item__child__title">SHOP</div>
+            <div class="item__child__button">ADD TO CARD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="album__container">
+      <div class="content__picture"></div>
+      <div class="content__text">
+        <div class="text__top">
+          Meet Like French, our deep, chic rouge polish that will never go out
+          of style. Nail your look at home with our most in-demand shade during
+          the holiday season at our NYC studio.
+        </div>
+        <div class="text__button">DISCOVER NOW</div>
+      </div>
+      <div class="content__text">
+        <div class="text__top">
+          Meet Like French, our deep, chic rouge polish that will never go out
+          of style. Nail your look at home with our most in-demand shade during
+          the holiday season at our NYC studio.
+        </div>
+        <div class="text__button">DISCOVER NOW</div>
+      </div>
+      <div class="content__picture"></div>
+      <div class="content__picture"></div>
+      <div class="content__text">
+        <div class="text__top">
+          Meet Like French, our deep, chic rouge polish that will never go out
+          of style. Nail your look at home with our most in-demand shade during
+          the holiday season at our NYC studio.
+        </div>
+        <div class="text__button">DISCOVER NOW</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__col">
+        <div class="footer__col__title">HELLO</div>
+        <ul class="footer__list">
+          <li>HELLO</li>
+          <li>my name is</li>
+          <li>jang jun sek</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col__title">HELLO</div>
+        <ul class="footer__list">
+          <li>HELLO</li>
+          <li>my name is</li>
+          <li>jang jun sek</li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <div class="footer__col__title">HELLO</div>
+        <ul class="footer__list">
+          <li>HELLO</li>
+          <li>my name is</li>
+          <li>jang jun sek</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Antique&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Shippori Antique", sans-serif;
+      }
+      .slideshow-container {
+        width: 70%;
+        margin: 0 auto;
+        padding: 20px 50px;
+        height: 80vh;
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .mySlides {
+        display: none;
+      }
+
+      .mySlides__title {
+        margin-top: 50px;
+      }
+      .mySlides__title,
+      .mySlides__description {
+        text-align: center;
+      }
+      .mySlides__description {
+        font-weight: lighter;
+      }
+      .mySlides__image {
+        width: 280px;
+        height: 65vh;
+      }
+      .left-button {
+        position: absolute;
+        top: 50;
+        left: 0;
+      }
+      .right-button {
+        position: absolute;
+        top: 50;
+        right: 0;
+      }
+      .button {
+        width: 100px;
+        cursor: pointer;
+        text-align: center;
+      }
+      .dot-container {
+        display: flex;
+      }
+      .dot:not(:last-child) {
+        margin-right: 10px;
+      }
+      .dot {
+        cursor: pointer;
+        color: gray;
+      }
+      .--fadeIn {
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <div class="mySlides --fadeIn">
+        <h1 class="mySlides__title">high magician</h1>
+        <img
+          src="https://w.namu.la/s/8ed1dc2c7940dad4a48ab264593d63b2e4ddd1a72f2ef171f34e01ca974134caf4457e9dc2d5b306ea8fb95d5eb49109f4821ca51fc57be433f64e5e25c0f4ec832b436816941c3a73f608c612fb93b770be25fd530a6b2274d3a6736fd802ef11b66358a6835e56f2b5d0200b204682"
+          class="mySlides__image"
+        />
+        <h3 class="mySlides__description">aisha's first line</h3>
+      </div>
+      <div class="mySlides --fadeIn">
+        <h1 class="mySlides__title">dark magician</h1>
+        <img
+          src="https://w.namu.la/s/cc8a4255f75de403833b00c49df036a86b49f3ec490d206a04a87238011115fd62210c84afe34e72bf8f4c5834086cda67d290365d2709c10115d63f80236360e7f15351214348b1a751f26a33b489817cead4c498876374b50b17d027c90df1"
+          class="mySlides__image"
+        />
+        <h3 class="mySlides__description">aisha's second line</h3>
+      </div>
+      <div class="mySlides --fadeIn">
+        <h1 class="mySlides__title">battle magician</h1>
+        <img
+          src="https://ww.namu.la/s/1fd42b56eb59e93583afac2d126f314fefa2e34b022ca259cb17deb766ef22a30714eac695bf51694fe4c7fc0fef8f3e768319ede43b0df8543a0a848fd6a89421b3858379dfb6bc57d65ca487ebfa17b4ac6a86c127ebe0f71e148185dc2c2fcbca478305194b4c8e89ba7830c9483f"
+          class="mySlides__image"
+        />
+        <h3 class="mySlides__description">aisha's thrid line</h3>
+      </div>
+
+      <div class="left-button button" onClick="nextSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+      <div class="right-button button" onClick="nextSlide(1)">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+
+      <div class="dot-container">
+        <div class="dot --fadeIn" onClick="changeSlide(0)">
+          <i class="fas fa-circle"></i>
+        </div>
+        <div class="dot --fadeIn" onClick="changeSlide(1)">
+          <i class="fas fa-circle"></i>
+        </div>
+        <div class="dot --fadeIn" onClick="changeSlide(2)">
+          <i class="fas fa-circle"></i>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+      const slidesLength = slides.length;
+      let currentSlide = 0;
+
+      // 예를 css에서  처리하면 된다는 것입니다..
+
+      slides[currentSlide].style.display = "block";
+      dots[currentSlide].style.color = "black";
+
+      window.onload = function () {
+        autoChangeSlides();
+
+        function autoChangeSlides() {
+          const timeFor = 3000;
+          setInterval(function () {
+            currentSlide++;
+            changeSlide(currentSlide); // 3이 들어갔을때가 문제.
+          }, timeFor);
+        }
+      };
+
+      function changeSlide(n) {
+        for (i = 0; i < slidesLength; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].style.color = "gray";
+        }
+        //현재 slideslength는 3.
+        if (currentSlide >= slidesLength) {
+          currentSlide = 0;
+        } else if (currentSlide < 0) {
+          currentSlide = slidesLength - 1;
+        } else {
+          currentSlide = n;
+        }
+
+        slides[currentSlide].style.display = "block";
+        dots[currentSlide].style.color = "black";
+      }
+
+      function nextSlide(n) {
+        currentSlide += n;
+        changeSlide(currentSlide);
+
+        // 이 부분도 코드가 겹치니까. 없애줄 수 있는것이지요.
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Shippori+Antique&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        font-family: "Montserrat", sans-serif;
+        display: grid;
+        grid-template-columns: 1fr 60% 1fr;
+        grid-template-rows: 1fr 5fr 1fr;
+      }
+      body > div {
+        border: 1px solid #af7832;
+      }
+      .row {
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+      }
+      .row-left {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      .row-right {
+        grid-column: 3 / span 1;
+        grid-row: 2 / 3;
+      }
+      .image-container {
+        grid-column: 2 / 3;
+        grid-row: 2 / span 1;
+        background-size: 320px 400px;
+      }
+      .row__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+      }
+      .row__content:hover {
+        background-color: #af7832;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .row__content:not(:last-child) {
+        border-bottom: 1px solid #af7832;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <div class="header"></div>
+    <div class="header"></div>
+
+    <div class="row row-left">
+      <div class="row__content" onclick="changeImage(0)">#1</div>
+      <div class="row__content" onclick="changeImage(1)"">#2</div>
+      <div class="row__content">#3</div>
+      <div class="row__content">#4</div>
+      <div class="row__content">#5</div>
+    </div>
+    <div class="image-container"></div>
+    <div class="row row-right">
+      <div class="row__content">#6</div>
+      <div class="row__content">#7</div>
+      <div class="row__content">#8</div>
+      <div class="row__content">#9</div>
+      <div class="row__content">#10</div>
+    </div>
+    <div class="footer"></div>
+    <div class="footer"></div>
+    <div class="footer"></div>
+
+    <script>
+      const imageSet = [
+        {
+          src1: "https://ww.namu.la/s/81f91dd357d2b450a5c0b744262735019640f0f0ebc55a75045800e74dc30934227b5acb8487d204c298e64916ceafd0ea93d3b10ef869d4d9686dde809b7819317b5c11018c2bb183d336eed2d261de632dde7a339e2c1a1b8cb4e65057d993797f8d27f25b1e57a8d59447c0a6714a",
+          src2: "https://w.namu.la/s/d6055867d9863b33d8a622988abaf96c4de5b4b5d95b4a3eb5107fc9b652d16e66faa42010d415ecb0fc13b150857573cddc66f63ba5ea61fbb4e57b2446e68e208e44efe1cb5ca6200c352608f9b02326eee8d7562c33e9d31cfdbb52ab5327",
+          src3: "https://w.namu.la/s/a8f718ab8ff78931fb20394656f3fc7190f2dd9acf74720f58c84daca9c29cd391821a4143e6e38239b482a297583a9214b6b8da5641ee132eabc52c73e383e790cf37d9b8ff37f0b15ca4004e85490a38f71c2559291ef1bfdd66f182ef719c",
+          src4: "https://w.namu.la/s/d94d79cb915a41c850e767dd0f1aafa26aa5ce38d277cea5a7d8ab80f35bc6d3eadc691304dc103e54e08064231c2363476c4f3b7f8609ae1df85334b7bad580ce7763ab116e7b089e5abc7ea7619bc8229ea0608a161d97631375303540d7c5",
+        },
+        {
+          src1: "https://ww.namu.la/s/dd8633048ce97dfbd1d8e027e3417cd1010482f5cbd50048b6eec5c681f0557b2ecc6382cdfa01d80fad548b02bf108b61aa1c45ca88106adae54a499845ce0f10c763b8f2356d551b55270613e2e2727fd0e9fa984b9fe01af22a404f9dc8da09b1639ee0310e76b4808c35662830d0",
+          src2: "https://ww.namu.la/s/716340ae1ee578c78c35d3452b997674efd2fd0d9d8c2ddca7407900baf1f5de1e2a078b10aa7fa492ae502279fca11914feae8e28e826aca5d84e7b488e5b748244d7276b6d23b629627ef8fbd0d88f17c4cf8dd34edf4ba27654b04da41c21b52b0a941d16c6d26a81e13245de6c49",
+          src3: "https://w.namu.la/s/e5cf5315931b71aa4c16d12c9f34707cc1b07eacd338dbb350fb6cfc04a40f64ce22cc8ada28a603e71833f429e3b1bbbe661a91d76f083e1f3d194a67ba4649779b6da5be6a8b912679d19bdd6952443352b6cb74b82983e178faf6c4a7240e",
+          src4: "https://w.namu.la/s/9c1f02462ede05f874d115100e1f871d4c6e434b1f286a261369b03f76143f679720a682dfddf9c0187c9ddd934ad7ada4e948464fb044ebd46f690ea6e543cfc952a93f70f895dc564eb02ed48c6be0abd51eaf7d93aa0adb68b4161b1d95cc6d22ee957b852f2d1c478c8bd5ad992b"
+        },
+      ];
+
+      let toggle;
+
+      function changeImage(n) {
+        toggle = true;
+        let interval;
+        if(toggle) {
+            startInterval();
+            toggle = !toggle;
+        } else if(!toggle) {
+            clearInterval(interval);
+        }
+        
+        //clearinterval이 잘 안되요... 다른 번호 선택하면 그 상자의 interval이 초기화되어야 하는데
+        //그리고 같은상자를 한번 더 클릭하면 사라지는것도 해야하는데 그것도 잘 안되고..
+
+
+        
+        const srcObject = Object.values(imageSet[n]);
+        let i = 0;
+        const imageContainer =
+          document.getElementsByClassName("image-container");
+
+        function setImage() {
+          imageContainer[0].style.backgroundImage =
+            "url('" + srcObject[i] + "')";
+
+          i++;
+          if (i >= srcObject.length) {
+            i = 0;
+          }
+        }
+
+        function startInterval() {
+            
+          interval = setInterval(function () {
+            setImage();
+          }, 500);
+        }
+
+      }
+    </script>
+  </body>
+</html>

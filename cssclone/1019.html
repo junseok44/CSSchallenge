@@ -19,6 +19,12 @@
         grid-template-columns: 1fr 60% 1fr;
         grid-template-rows: 1fr 5fr 1fr;
       }
+      .header, .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.3rem;
+      }
       body > div {
         border: 1px solid #af7832;
       }
@@ -37,7 +43,8 @@
       .image-container {
         grid-column: 2 / 3;
         grid-row: 2 / span 1;
-        background-size: 320px 400px;
+        background-size: 220px 200px no-repeat;
+        background-position: center;
       }
       .row__content {
         display: flex;
@@ -48,15 +55,35 @@
       .row__content:hover {
         background-color: #af7832;
         transition: background-color 0.2s ease-in-out;
+        transform: scale(0.95);
+        cursor: pointer;
       }
       .row__content:not(:last-child) {
         border-bottom: 1px solid #af7832;
+      }
+      .footer {
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .footer > span {
+        animation: movingText 2s linear 0s infinite alternate-reverse;
+
+      }
+
+      @keyframes movingText {
+        0% {
+          transform: translateX(-150px);
+        }
+        100% {
+          transform: translateX(150px);
+
+        }
       }
     </style>
   </head>
   <body>
     <div class="header"></div>
-    <div class="header"></div>
+    <div class="header">ELSWORD</div>
     <div class="header"></div>
 
     <div class="row row-left">
@@ -75,10 +102,14 @@
       <div class="row__content">#10</div>
     </div>
     <div class="footer"></div>
-    <div class="footer"></div>
+    <div class="footer">
+      <span>      hey everyone look at elsword's illustration works isn't it so beautiful?</div>
+      </span>
     <div class="footer"></div>
 
     <script>
+
+
       const imageSet = [
         {
           src1: "https://ww.namu.la/s/81f91dd357d2b450a5c0b744262735019640f0f0ebc55a75045800e74dc30934227b5acb8487d204c298e64916ceafd0ea93d3b10ef869d4d9686dde809b7819317b5c11018c2bb183d336eed2d261de632dde7a339e2c1a1b8cb4e65057d993797f8d27f25b1e57a8d59447c0a6714a",
@@ -94,43 +125,58 @@
         },
       ];
 
-      let toggle;
+      /* 실수한 부분, 새롭게 배운것/ 1. 변수 선언 위치. interval은 다른곳에서도 사용을 할테니까 밖으로 꺼내놔야 한다.
+      2. 같다를 == 로 표시해주어야 한다는 것. 
+      3. imageContainer[0] 이어야 한다는것. 4. setInterval을 통해서. 무한 유지 반복 특정조건하에서 정지.
+      */
+
+      const imageContainer =
+          document.getElementsByClassName("image-container");
+      
+      let toggle = false;
+      let interval;
+      let currentNumber;
 
       function changeImage(n) {
-        toggle = true;
-        let interval;
-        if(toggle) {
+        
+        if(!toggle) {
             startInterval();
-            toggle = !toggle;
-        } else if(!toggle) {
-            clearInterval(interval);
+            toggle = !toggle; 
+        } else if(toggle) {
+          clearInterval(interval);
+          imageContainer[0].style.backgroundImage = "none"; 
+          if(currentNumber == n) // 같은 박스인데 toggle만 켜진상태인 경우
+          { 
+            toggle = !toggle;  
+          } else { // toggle이 켜진 상태에서 다른 박스를 클릭한 경우
+            startInterval(); 
+          }
+
         }
-        
-        //clearinterval이 잘 안되요... 다른 번호 선택하면 그 상자의 interval이 초기화되어야 하는데
-        //그리고 같은상자를 한번 더 클릭하면 사라지는것도 해야하는데 그것도 잘 안되고..
-
 
         
-        const srcObject = Object.values(imageSet[n]);
+        
         let i = 0;
-        const imageContainer =
-          document.getElementsByClassName("image-container");
+
 
         function setImage() {
+
+          const srcObject = Object.values(imageSet[n]);
           imageContainer[0].style.backgroundImage =
             "url('" + srcObject[i] + "')";
 
           i++;
+
           if (i >= srcObject.length) {
             i = 0;
           }
         }
 
         function startInterval() {
-            
+          currentNumber = n;
           interval = setInterval(function () {
             setImage();
-          }, 500);
+          }, 300);
         }
 
       }
